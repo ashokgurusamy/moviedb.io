@@ -9,6 +9,7 @@ class MovieRow extends React.Component{
     }
 
 render(){
+    
     return <div className="movieRows" key={this.props.movie.id}>
     <div className="app-img">
     <img alt="movie-poster" width="120" src={this.props.movie.poster_src}/>

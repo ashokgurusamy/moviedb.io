@@ -32,7 +32,7 @@ this.performSearch("avengers")
 performSearch(searchTerm){
   const urlString = "https://api.themoviedb.org/3/search/movie?api_key=0923e7ab9e9ecdc6bfa29590587c12d7&query=" + searchTerm;
   $.ajax({
-    url: urlString,
+    url: urlString,  
     success: (searchResults) =>{
       //console.log("fetched data");
       const results = searchResults.results;
@@ -45,7 +45,7 @@ performSearch(searchTerm){
       else
       results.forEach((movie) =>{
         movie.poster_src = "https://image.tmdb.org/t/p/w185" + movie.poster_path;
-        const movieRow = <MovieRow key={movie.id} movie={movie}/>
+      const movieRow = <MovieRow key={movie.id} movie={movie}>{<div class="Parent"></div>}</MovieRow>
         movieRows.push(movieRow);
       })
       this.setState({movieRows: movieRows})
@@ -112,7 +112,7 @@ render(){
           </p>
           <p class="license">
             Hosted in Github Pages. Code is licensed under
-            <b> MIT</b> and available at <a href="" target="_blank">Github</a>
+            <b> MIT</b> and available at <a href="https://github.com/AshokWeber" target="_blank">Github</a>
           </p>
           <div class="copy">
             &copy; 2019 Ashok Gurusamy
